@@ -9,6 +9,7 @@
 // #define LILYGO_T3_V2_0
 // #define LILYGO_T3_S3_V1_0
 // #define LILYGO_T3_S3_V1_2
+// #define HELTEC_V3
 
 
 #define UNUSE_PIN                   (0)
@@ -221,7 +222,33 @@
 
 #define HAS_SDCARD
 #define HAS_DISPLAY
+#elif defined(HELTEC_V3)
 
+// Heltec V3.1
+// Pin Sources
+// - https://github.com/markqvist/RNode_Firmware/blob/master/Boards.h
+// - https://github.com/ropg/heltec_esp32_lora_v3/blob/main/src/heltec_unofficial.h
+// Radio
+#define USE_SX1262
+#define RADIO_SCLK_PIN               9
+#define RADIO_MISO_PIN              11
+#define RADIO_MOSI_PIN              10
+#define RADIO_CS_PIN                 8
+#define RADIO_DIO0_PIN              14
+#define RADIO_RST_PIN               12
+#define RADIO_DIO1_PIN              14
+#define RADIO_BUSY_PIN              13
+// LED
+#define BOARD_LED                   35
+#define LED_ON                      HIGH
+#define LED_OFF                     LOW
+// OLED Screen
+#define HAS_DISPLAY
+#define I2C_SDA                     17
+#define I2C_SCL                     18
+#define OLED_RST                    21
+// Button
+#define BUTTON_PIN                 0
 
 #else
 #error "For the first use, please define the board version and model in <utilities. h>"
