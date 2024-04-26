@@ -62,7 +62,13 @@ bool RadioLibInterface::start() {
 	online(false);
 	info("LoRa initializing...");
   
+#ifdef RAK4631
+	SPI.setPins(RADIO_MISO_PIN, RADIO_SCLK_PIN, RADIO_MOSI_PIN);
+	SPI.begin();
+#else
 	SPI.begin(RADIO_SCLK_PIN, RADIO_MISO_PIN, RADIO_MOSI_PIN);
+#endif
+
 	delay(1500);
 
 	// initialize SX1276 with default settings
@@ -116,7 +122,7 @@ bool RadioLibInterface::start() {
 	Serial.println(F("success!"));
 
 	info("LoRa init succeeded.");
-	extreme("LoRa bandwidth is " + std::to_string(Utilities::OS::round(bitrate()/1000.0, 2)) + " Kbps");
+	// extreme("LoRa bandwidth is " + std::to_string(Utilities::OS::round(bitrate()/1000.0, 2)) + " Kbps");
 
 	online(true);
 	return true;

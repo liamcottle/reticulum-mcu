@@ -80,7 +80,7 @@ bool LoRaInterface::start() {
 	LoRa.setTxPower(_tx_power);
 
 	info("LoRa init succeeded.");
-	extreme("LoRa bandwidth is " + std::to_string(Utilities::OS::round(bitrate()/1000.0, 2)) + " Kbps");
+	// extreme("LoRa bandwidth is " + std::to_string(Utilities::OS::round(bitrate()/1000.0, 2)) + " Kbps");
 
 	online(true);
 	return true;

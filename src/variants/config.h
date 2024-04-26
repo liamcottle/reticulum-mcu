@@ -250,6 +250,29 @@
 // Button
 #define BUTTON_PIN                 0
 
+#elif defined(RAK4631)
+
+// RAK Wireless WisBlock with RAK4631
+// Pin Sources
+// - https://github.com/meshtastic/firmware/blob/master/variants/rak4631/variant.h
+// Radio
+#define USE_SX1262
+#define RADIO_SCLK_PIN              43
+#define RADIO_MISO_PIN              45
+#define RADIO_MOSI_PIN              44
+#define RADIO_CS_PIN                42
+#define RADIO_DIO0_PIN              47
+#define RADIO_RST_PIN               38
+#define RADIO_DIO1_PIN              47
+#define RADIO_BUSY_PIN              46
+// LED
+#define BOARD_LED                   35
+#define LED_ON                      HIGH
+#define LED_OFF                     LOW
+// OLED Screen (none)
+// Button (none)
+#define BUTTON_PIN                 0
+
 #else
 #error "For the first use, please define the board version and model in <utilities. h>"
 #endif
