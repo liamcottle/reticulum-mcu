@@ -9,7 +9,7 @@
 // #define LILYGO_T3_V2_0
 // #define LILYGO_T3_S3_V1_0
 // #define LILYGO_T3_S3_V1_2
-// #define HELTEC_V3
+// #define HELTEC_WIFI_LORA_32_V3
 
 
 #define UNUSE_PIN                   (0)
@@ -222,7 +222,7 @@
 
 #define HAS_SDCARD
 #define HAS_DISPLAY
-#elif defined(HELTEC_V3)
+#elif defined(HELTEC_WIFI_LORA_32_V3)
 
 // Heltec V3.1
 // Pin Sources
